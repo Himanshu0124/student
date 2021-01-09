@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  min-height:170vh;
+}
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding:40px 100px;
+  z-index:10000;
+}
+header.sticky
+{
+  padding:5px 100px;
+  background-color: coral;
+}
+
+header .logo
+{
+  position: relative;
+  font-weight: 700;
+  color:#fff;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+
+}
+header ul
+{
+  position: relative;
+  display:flex;
+  justify-items: center;
+  align-items: center;
+}
+header ul li
+{
+   position:relative;
+   list-style: none;
+}
+header ul li a 
+{
+  position: relative;
+  margin:0 15px;
+  text-decoration: none;
+  color:#fff;
+  letter-spacing: 2px;
+  font-weight:500px;
+  transition: 0.6s;
+}
+.banner
+{
+  content: 'Hello';
+  position: relative;
+  width:100%;
+  height:40vh;
+  background: #e96443;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #904e95, #e96443);  
+background: linear-gradient(to right, #904e95, #e96443);  
+background-size: cover;
+} 
+header.sticky ul li a
+{
+  color:#000;
+}
+ 
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">Himanshu</a> 
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/login">Login</a></li>
+  <li><a href="/contact">Contact</a></li> 
+</ul>
+
+</header>
+<section class="banner"></section>
+
+<script>
+  window.addEventListener("scroll" , function(){
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky" , window.scrollY>0);
+  })
+</script>
+</body>
+</html>
